@@ -1,0 +1,43 @@
+arreglo[2,2] de entero matriz1
+arreglo[2,2] de entero matriz2
+
+procedimiento captura(var arreglo[2,2] de entero matriz)
+    entero i,j
+inicio
+    para i <- 1 hasta 2 haga
+        para j <- 1 hasta 2 haga
+        	escriba "Ingrese numero para fila ", i, " columna " , j, " : "
+        	lea matriz[i,j]
+        fin para
+    fin para    
+fin
+
+funcion mult(arreglo[2,2] de entero matriz): arreglo[2,2] de entero
+    arreglo[2,2] de entero resultado
+    entero i,j
+inicio
+   para i <- 1 hasta 2 haga
+       para j <- 1 hasta 2 haga
+           resultado[i,j] <- (matriz[i][j] * matriz[j,i]) + 
+   	   fin para
+   fin para
+fin
+
+procedimiento mostrar(arreglo[2,2] de entero matriz)
+   entero i,j
+inicio
+   llamar limpiar_pantalla
+	para i <- 1 hasta 2 haga
+        para j <- 1- 1 hasta 2 haga
+        	escriba matriz[i,j], " "
+        fin para
+        llamar nueva_linea
+    fin para    
+fin
+
+inicio
+    llamar captura(matriz1)
+    matriz2 <- mult(matriz1)
+    llamar mostrar(matriz2)
+    
+fin

@@ -1,0 +1,71 @@
+arreglo[10] de caracter calificaciones
+entero votosA,votosB,votosC,votosD,votosE
+entero longA,longB,longC,longD,longE
+
+
+procedimiento captura
+   entero i
+inicio
+    para i <- 1 hasta 10 haga
+        escriba "Ingrese calificacion (a,b,c,d,e) ?"
+        lea calificaciones[i]
+    fin para
+fin
+
+procedimiento cuenta
+    entero i
+inicio
+    votosA <- 0
+    votosB <- 0
+    votosC <- 0
+    votosD <- 0
+    votosE <- 0
+    longA <- 0
+    longB <- 0
+    longC <- 0
+    longD <- 0
+    longE <- 0
+    para i <- 1 hasta 10 haga
+        caso calificaciones[i] haga
+            'a' : votosA <- votosA + 1
+            'b' : votosB <- votosB + 1
+            'c' : votosC <- votosC + 1
+            'd' : votosD <- votosD + 1
+            'e' : votosE <- votosE + 1
+        fin caso
+        longA <- votosA * 1
+        longB <- votosB * 2
+        longC <- votosC * 3
+        longD <- votosD * 4
+        longE <- votosE * 5
+    fin para
+fin
+
+procedimiento dibujaBarra(caracter calificacion, entero votos, entero long)
+    entero i
+inicio
+    escriba calificacion, "(", votos , ")", " : "
+    para i <- 1 hasta long haga
+        escriba "*"
+    fin para
+fin
+
+procedimiento dibujaHistograma
+inicio
+    llamar limpiar_pantalla
+    llamar dibujaBarra('a',votosA,longA)
+    llamar nueva_linea
+    llamar dibujaBarra('b',votosB,longB)
+    llamar nueva_linea
+    llamar dibujaBarra('c',votosC,longC)
+    llamar nueva_linea
+    llamar dibujaBarra('d',votosD,longD)
+    llamar nueva_linea
+    llamar dibujaBarra('e',votosE,longE)
+fin
+
+inicio
+    llamar captura
+    llamar cuenta
+    llamar dibujaHistograma
+fin
